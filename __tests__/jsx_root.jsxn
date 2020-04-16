@@ -1,0 +1,18 @@
+<Hello friend="World" count={1}>
+  <Goodbye signOff />
+  You can put text here too.
+  {{
+    "Is it okay to put JSON values here?": true
+  }}
+  {< ExpressionInception
+    nullProp={null}
+    objectProp={{ "cool": true }}
+    arrayProp={[0, "1", true, null]}
+  / >}
+  <>
+    < >
+      F R A G M E N T S
+    < / >
+  </>
+  Text is fine here too.
+</Hello>

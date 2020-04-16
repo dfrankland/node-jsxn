@@ -1,0 +1,7 @@
+{
+  "a": 42,
+  "b": ["this is a string", "this is too 👍 \u2605", 12],
+  "c": { "hello" : "world" },
+  "d": null,
+  "e": <Element prop="value" />
+}

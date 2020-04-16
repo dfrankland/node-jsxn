@@ -1,0 +1,31 @@
+[package]
+name = "node-jsxn"
+version = "0.1.0"
+edition = "2018"
+description = "Put JSX in your JSON and JSON in your JSX!"
+repository = "https://github.com/dfrankland/node-jsxn#readme"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+debug_assertions = []
+parse_file = []
+
+[dependencies]
+jsxn = "0.1.0"
+console_error_panic_hook = { version = "0.1.6", optional = true }
+wasm-bindgen = { version = "0.2.60", features = ["serde-serialize"] }
+wee_alloc = "0.4.5"
+cfg-if = "0.1.10"
+serde_json = "1.0.51"
+nom = "5.1.1"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.10"
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
