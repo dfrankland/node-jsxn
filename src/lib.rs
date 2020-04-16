@@ -1,8 +1,8 @@
 use ::jsxn::jsxn;
 use cfg_if::cfg_if;
 use nom::error::ErrorKind;
-use wasm_bindgen::prelude::*;
 use std::fmt::Debug;
+use wasm_bindgen::prelude::*;
 
 cfg_if! {
     // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
@@ -39,8 +39,7 @@ pub fn parse_string(jsxn_string: String) -> Result<JsValue, JsValue> {
     let jsx_value = jsxn::root::<(&str, ErrorKind)>(&jsxn_string)
         .map_err(err_into_js_value)?
         .1;
-    JsValue::from_serde(&jsx_value)
-        .map_err(err_into_js_value)
+    JsValue::from_serde(&jsx_value).map_err(err_into_js_value)
 }
 
 cfg_if! {
@@ -72,6 +71,11 @@ cfg_if! {
             let jsxn_string = read_file_sync(path, &read_file_sync_options);
 
             parse_string(jsxn_string)
+        }
+    } else {
+        #[wasm_bindgen(js_name = parseFile)]
+        pub fn parse_file(_: String) -> Result<JsValue, JsValue> {
+            Err(err_into_js_value("Not supported in the browser."))
         }
     }
 }
