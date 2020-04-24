@@ -1,6 +1,6 @@
 {
   "name": "node-jsxn",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Put JSX in your JSON and JSON in your JSX!",
   "repository": {
     "type": "git",
