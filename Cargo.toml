@@ -1,9 +1,9 @@
 [package]
 name = "node-jsxn"
-version = "0.1.1"
+version = "0.1.3"
 edition = "2018"
 description = "Put JSX in your JSON and JSON in your JSX!"
-repository = "https://github.com/dfrankland/node-jsxn#readme"
+repository = "https://github.com/dfrankland/node-jsxn.git"
 license = "MIT"
 
 [lib]
